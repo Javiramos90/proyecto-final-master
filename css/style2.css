@@ -1,0 +1,349 @@
+/* Estilos generales para la barra de navegación */
+*{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+
+.navbar {
+  z-index: 1;
+  position: fixed;
+  background-color: #f3f3ef; /* Beige para el fondo */
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.navbar-content {
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+.dropdown img{
+  height: 80px;
+  width: auto;
+}
+
+.navbar-content li {
+  position: relative;
+  
+}
+.navbar-content li .login {
+  position: relative;
+  
+}
+
+.navbar-content a {
+  text-decoration: none;
+  color: #2E8B57; /* Verde oliva para los textos */
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-content a:hover {
+  color: #CD5C5C; /* Terracota al pasar el cursor */
+}
+
+.dropdown{
+  position: relative;
+  width: 300px;
+}
+/* Dropdown - submenús */
+.dropdown .contenido-barra {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  min-width: 160px;
+  padding: 12px 12px;
+}
+
+.dropdown:hover .contenido-barra {
+  display: block;
+}
+
+.contenido-barra a {
+  display: block;
+  font-size: 15px;
+  width: 10px;
+  color: #4682B4; /* Azul cielo para los enlaces de dropdown */
+  padding: 10px 0;
+  text-align: left;
+  transition: all 0.5s;
+}
+
+
+.contenido-barra a:hover {
+  background-color: #f3ecaa; /* Color beige oscuro en hover */
+  color: #2E8B57; /* Verde oliva en hover */
+  width: 130px;
+  font-size: 17px;
+} 
+
+
+.navbar-buscador-login {
+width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+.navbar-buscador-login .buscador{
+    width: 40%;
+    height: 10px;
+    text-align: center;
+}
+/* Buscador */
+.buscador{
+  align-items: center;
+  position: relative;
+}
+
+.buscador img , .login img {
+  width: 30px;
+  height: 30px;
+  margin: 0 100px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+}
+
+.buscador img:hover , .login img:hover {
+  transform: scale(1.2); /* Pequeño aumento al pasar el cursor */
+}
+
+.buscar{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#btn-buscar{
+  background-color: #F0E68C;
+  color: #2E8B57;
+  margin: 0%;
+  position: relative;
+  width: 100px;
+}
+
+#btn-buscar:hover{
+  background-color: #2E8B57;
+  color:#F0E68C;
+}
+.input-buscar{
+  display: block;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 30px;
+  animation: movimiento-buscar 2s both;
+}
+@keyframes movimiento-buscar{
+  0%{
+    margin-top: 0;
+  }
+
+  100%{
+    margin-top: 7% ;
+  }
+
+}
+input.input-buscar{
+  border-radius: 5px 0 0 5px;
+}
+button.input-buscar{
+  border-radius: 0 5px 5px 0;
+}
+.mostrar{
+  height: 20px;
+  display: none;
+  overflow: hidden;
+}
+
+
+.input-login {
+  display: block;
+  flex-direction: column;
+  margin-left: 500px;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  position: absolute;
+  right: 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  animation: movimiento-login 1s both; /* Animación de despliegue */
+  height: 190px;
+}
+
+@keyframes movimiento-login{
+  0%{
+    margin-top: 0;
+    top: 30px;
+  }
+  100%{
+    margin-top: 7%;
+    top:37px;
+  }
+}
+
+.visible{
+  display:none
+}
+.login .input-login .mostrar {
+  display: flex; /* Muestra el formulario */
+  max-height: 400px; /* Altura máxima durante el despliegue */
+}
+
+.sesion input,
+.boton input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.img-container{
+  position: relative;
+  height: 100vh;
+  /* width: 100%; */
+
+}
+
+.img-portada {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.slide {
+  object-fit: cover;
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 2s ease;
+}
+.slide.activo {
+  opacity: 1;
+}
+
+.titulo{
+  position:absolute;
+  text-align: center;
+  z-index: 1;
+  margin-left: 80vh;
+  margin-top: 50vh;
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+}
+
+h2{
+  margin: 100px 100px;
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+
+.mapa{
+  background-color: rgb(114, 210, 255);
+  margin: 5% 25%;
+  padding: 5% 5%;
+  border: 2px solid #f3ecaa;
+  border-radius: 10px;
+}
+#Map{
+  display: none;
+}
+
+footer{
+  height: auto;
+  background-color: #f3ecaa;
+  border: 3px solid #6dda9c;
+  border-radius: 2px 0px 0px 2px;
+  width: 100%;
+}
+
+.endPage{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0px;
+  
+}
+.formNombre{
+  padding: 0px 10px;
+}
+
+.formEmail{
+  padding: 0px 10px;
+}
+
+.botonFormulario{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: stretch;
+}
+.botonFormulario input{
+  width: 20px;
+  padding: 8px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.btn-form{
+  margin: 0rem 50rem;
+}
+
+.check{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 0px 700px;
+  padding: 1% 0%;
+}
+
+.check p{
+  width: 40vh;
+}
+.formNombre input{
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+}
+.formEmail input{
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.endPage p{
+  text-align: center;
+  margin: 2px;
+}
+
+.politica{
+  margin: 0 auto;
+}
